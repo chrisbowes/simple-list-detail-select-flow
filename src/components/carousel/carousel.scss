@@ -1,0 +1,9 @@
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+  overflow: scroll;
+  position: relative;
+  border-radius: 3px;
+}
