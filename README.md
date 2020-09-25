@@ -26,4 +26,12 @@ Everything here is handrolled, so no use of create-react-app or external librair
 
 Styles are handled using SCSS with a simple mixin and variable setup to demonstrate an understanding of SCSS architecture. Components have their own SCSS files where appropriate.
 
+## Desktop support only
+
+The site is not optimised for mobile use. It is developed and tested on desktop only and is not responsive for smaller screen sizes
+
+## Optimisation
+
+This is a demonstration site, at the time of writing there is no lazy loading or code splitting implimented.
+
 
