@@ -16,6 +16,13 @@ function reducer(state, action) {
         ...state,
         data: action.payload,
       };
+    case "UPDATE_WISHLIST":
+      return {
+        ...state,
+        wishlist: state.wishlist.includes(action.payload) ? 
+        [ ...state.wishlist.filter(item => item !== action.payload) ]
+        : [ ...state.wishlist, action.payload ]
+      }
     default:
       return state;
   }
@@ -34,17 +41,17 @@ export function StoreProvider(props) {
           {
             title: 'Adventure',
             id: 12,
-            data: adventureData.results.filter((item) => !item.genre_ids.includes(16) && !item.genre_ids.includes(35))
+            data: adventureData.results.filter((item) => !item.genre_ids.includes(16) && !item.genre_ids.includes(35)).map(item => ({...item, primary_cat: 'adventure'}))
           },
           {
             title: 'Animation',
             id: 16,
-            data: animationData.results.filter((item) => !item.genre_ids.includes(12) && !item.genre_ids.includes(35))
+            data: animationData.results.filter((item) => !item.genre_ids.includes(12) && !item.genre_ids.includes(35)).map(item => ({...item, primary_cat: 'animation'}))
           },
           {
             title: 'Comedy',
             id: 35,
-            data: comedyData.results.filter((item) => !item.genre_ids.includes(12) && !item.genre_ids.includes(16))
+            data: comedyData.results.filter((item) => !item.genre_ids.includes(12) && !item.genre_ids.includes(16)).map(item => ({...item, primary_cat: 'comedy'}))
           }
         ]
         dispatch({ type: 'UPDATE_DATA', payload: sortedRes });

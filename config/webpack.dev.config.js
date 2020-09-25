@@ -10,7 +10,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../build'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/'
   },
   mode: 'development',
   devServer: {
@@ -18,7 +19,8 @@ module.exports = {
     compress: true,
     port: 3000,
     overlay: true,
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   devtool: 'cheap-module-eval-source-map',
   module: {

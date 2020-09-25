@@ -12,7 +12,7 @@ const handleErrors = (e, exception) => {
 }
 
 export const tmdbReq = async (queryUrl, queryStrParams) => {
-  const url = `${config.TMDB_API_URL}${queryUrl}?api_key=${config.TMDB_API_KEY}${queryStrParams}`;
+  const url = `${config.TMDB_API_URL}${queryUrl}?api_key=${config.TMDB_API_KEY}${queryStrParams ? queryStrParams : ''}`;
   const controller = new AbortController();
   const signal = controller.signal;
   setTimeout(() => controller.abort(), config.FETCH_TIMEOUT);

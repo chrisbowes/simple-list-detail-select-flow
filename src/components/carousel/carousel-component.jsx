@@ -9,8 +9,8 @@ const Carousel = ({ categoryid }) => {
   return (
     <Fragment>
       {cat && (
-        <section className="category">
-          <h2>{cat.title}</h2>
+        <section className={`category category--${cat.title.toLowerCase()}`}>
+          <h2 className="category__title">{cat.title}</h2>
           <div className="carousel">
             {cat.data.map((item, index) => {
               return (

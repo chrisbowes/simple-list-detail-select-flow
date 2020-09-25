@@ -1,0 +1,12 @@
+.list-stats {
+  margin: 18px 0 0 0;
+  padding: 0;
+  list-style: none;
+  .list-stats__item {
+    list-style: none;
+    display: inline-block;
+    .list-stats__value {
+      font-weight: 200;
+    }
+  }
+}

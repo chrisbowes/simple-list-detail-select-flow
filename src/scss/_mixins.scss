@@ -1,0 +1,14 @@
+@mixin poster-image {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  @include box-shadow;
+}
+
+@mixin box-shadow {
+  box-shadow: 2px 6px 20px -6px rgba(0, 0, 0, 0.75);
+}
+
+@mixin page-title {
+  font-size: 3.2rem;
+  text-transform: uppercase;
+}

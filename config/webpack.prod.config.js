@@ -17,6 +17,7 @@ module.exports = {
     path: path.join(__dirname, '../build'),
     filename: '[name].[chunkhash:8].bundle.js',
     chunkFilename: '[name].[chunkhash:8].chunk.js',
+    publicPath: '/'
   },
   mode: 'production',
   module: {
@@ -29,20 +30,12 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
-          MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
+          'sass-loader',
+          'postcss-loader'
         ]
       },
       {

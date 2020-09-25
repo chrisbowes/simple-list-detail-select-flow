@@ -1,4 +1,23 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
 .carousel-item {
+  &.carousel-item--adventure {
+    h3 {
+      color: $adventure;
+    }
+  }
+  &.carousel-item--animation {
+    h3 {
+      color: $animation;
+    }
+  }
+  &.carousel-item--comedy {
+    h3 {
+      color: $comedy;
+    }
+  }
+  cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: saturation;
@@ -6,21 +25,25 @@
   height: 300px;
   flex: 0 0 100%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: row;
-  color: white;
   padding: 30px;
   box-sizing: border-box;
+  .carousel-item__title {
+    font-size: 2.4rem;
+    margin: 0 0;
+  }
   .carousel-item__summary {
     order: 2;
     padding: 0 30px;
+    width: 50%;
+    color: $highlight;
   }
   .carousel-item__image {
+    @include poster-image;
     height: 100%;
     box-sizing: border-box;
     width: auto;
     order: 1;
-    border: 1px solid rgba(255,255,255,0.6);
-    box-shadow: 2px 6px 20px -6px rgba(0,0,0,0.75);
   }
 }
